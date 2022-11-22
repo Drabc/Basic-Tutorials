@@ -1,7 +1,7 @@
 // if
 
 // if (condicion) {
-//   en caso verdad
+//   en caso de verdad
 // }
 
 const x = 1
@@ -48,6 +48,7 @@ if (animal == 'perro') {
 // >= mayor o igual
 // <= menor o igual
 // != no igual
+// == igual a
 
 // multiples condiciones
 // && (and) se usa para unir condiciones. Todas las condiciones tienen que ser verdar
