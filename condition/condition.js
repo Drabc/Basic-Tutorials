@@ -1,16 +1,18 @@
 // if
-const x = 1
 
 // if (condicion) {
 //   en caso verdad
 // }
 
+const x = 1
 if (x == 1) {
   console.log('es verdar')
 }
 
+// Else
+
 // if (condicion) {
-//   en caso verdad
+//   en caso de ser verdad
 // } else {
   // corre en caso que la condicion sea falsa
 // }
@@ -29,21 +31,7 @@ if (x == 1) {
 //   console.log('es falso')
 // }
 
-// > mayor que
-// < menor que
-// >= mayor o igual
-// <= menor o igual
-// != no igual
-
 const animal = 'gato'
-
-if (animal == 'perro') {
-  console.log('wao wao')
-} else if (animal == 'gato') {
-  console.log('miau miau')
-}
-
-const animal = 'delfin'
 
 if (animal == 'perro') {
   console.log('wao wao')
@@ -54,6 +42,12 @@ if (animal == 'perro') {
 } else {
     console.log('no se')
 }
+
+// > mayor que
+// < menor que
+// >= mayor o igual
+// <= menor o igual
+// != no igual
 
 // multiples condiciones
 // && (and) se usa para unir condiciones. Todas las condiciones tienen que ser verdar
