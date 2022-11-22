@@ -1,3 +1,8 @@
+// Primero navega al projecto usando tu comando de "cd"
+// corre el programa usando el siguiente comando:
+// node condition/condition_practice.js 
+
+
 // Crea una condicion que sea verdad
 console.log('#1')
 if () {
