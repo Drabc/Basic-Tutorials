@@ -8,7 +8,7 @@ const z = 0.5
 
 // String
 const a = 'Hello'
-const b = 'World'
+const b = "World"
 
 // boolean true or false true = 1 y false = 0
 const d = true
