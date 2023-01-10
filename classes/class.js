@@ -6,6 +6,7 @@
 // En otro ejemplo, el concepto de personas seria la clase, y un individuo en specifico
 // (Bill Acosta), seria la instancia de esa clase.
 // Para crear una clase usamos la keyword 'new' segido por el nombre de la case y parentesis ()
+// new Person()
 // Las clases tinen una keyword que hace referencia a la instancia: this
 
 // Class sytanx
@@ -70,6 +71,6 @@ class Moneda {
     const probabilidadCara = (this.cara/total)*100
     const probabilidadCruz = (this.cruz/total)*100
     console.log(probabilidadCara)
-    console.log(`Resultado cara: ${probabilidadCara}, cruz: ${probabilidadCruz}`)
+    console.log(`Resultado cara: ${probabilidadCara}%, cruz: ${probabilidadCruz}%`)
   }
 }
