@@ -22,6 +22,12 @@
   // FUNCIONES
   // como definimos las funciones en functions.js
 
+  // SCOPE
+  // public and private
+
+  // SELF
+  // makes reference to class itself instead of instance
+
 // }
 
 class Persona {
