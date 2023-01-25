@@ -1,8 +1,8 @@
 class Player {
-  #_id
+  #_id // private variable
 
   constructor(name) {
-    Player.id = Player.id || 0
+    Player.id = Player.id || 0 // Class variables
     Player.id += 1
     this.name = name
     this.#_id = Player.id
