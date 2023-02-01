@@ -12,7 +12,9 @@
     - How to win
       - three in a row, column or diagonal
     - Players take turn
-    - Can place a marker if occupied
+    - How to mark
+      - Previous player cannot mark again
+      - Cannot mark an occupied spot
     - How the game ends
       - If someone wins
       - Game is locked

@@ -37,3 +37,17 @@ function printRandomTicketWithCapilizeNameAndLimit(name, limit=20) {
   const randomNumber = Math.floor(Math.random()*limit)
   console.log(`Tu numero de espera es ${randomNumber} ${name}`)
 }
+
+// anonymous functions
+
+const x = [1, 2, 3]
+anonFunction(x, function(element) {
+  console.log(element)
+})
+
+
+function anonFunction(testArray, actingFunction) {
+  for(let i = 0; i < testArray.length; i++) {
+    actingFunction(testArray[i])
+  }
+}

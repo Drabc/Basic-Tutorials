@@ -15,13 +15,19 @@ class Board {
     ]
   }
 
-  mark(player, x, y) {
+  mark(player, column, row) {
     const symbol = this.#_playerSymbolMap[player.id]
-    this.#_playingBoard[x][y] = symbol
+    this.#_playingBoard[row][column] = symbol
   }
 
   display() {
-    console.log(this.#_playingBoard)
+    this.#_playingBoard.forEach((row) => {
+      const rowOutput = []
+      row.forEach((cell) => {
+        rowOutput.push(cell)
+      })
+      console.log(rowOutput.join(' | '))
+    })
   }
 
 }
