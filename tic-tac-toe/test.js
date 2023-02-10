@@ -9,8 +9,12 @@ const players = [p1, p2]
 const board = new Board(players)
 
 board.mark(p1, 0, 0)
-board.mark(p2, 1, 0)
+board.mark(p2, 0, 1)
+board.mark(p1, 1, 0)
+board.mark(p2, 1, 1)
 board.mark(p1, 2, 0)
-board.mark(p2, 2, 2)
+board.mark(p2, 2, 1)
+
+console.log(board._hasSomeoneWon('o'))
 
 board.display()
