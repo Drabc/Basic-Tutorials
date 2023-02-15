@@ -32,11 +32,12 @@ class Board {
     this.#_playingBoard[row][column] = symbol
     this.#_lastPlayedId = player.id
 
-    // this.#_hasSomeoneWon()
+    if (this.#_hasSomeoneWon(symbol)) {
+      console.log(`Congratulation ${player.name}. You have won!`)
+    }
   }
 
   display() {
-    // console.log(this.#_lastPlayedId)
     this.#_playingBoard.forEach((row) => {
       const rowOutput = []
       row.forEach((cell) => {
@@ -46,7 +47,7 @@ class Board {
     })
   }
 
-  _hasSomeoneWon(symbol) {
+  #_hasSomeoneWon(symbol) {
     // Horizontal check
     let won = false
     this.#_playingBoard.forEach((row) => {
@@ -56,34 +57,48 @@ class Board {
       }
     })
 
-    return won
-    // // vertical check
-    // let colWon = true
-    // for (let i=0; i < this.#_playingBoard.length; i++) {
-    //   for (let x=0; x < this.#_playingBoard.length; x++) {
-    //     colWon = colWon && symbol === this.#_playingBoard[i][x]
-    //   }
-    //   if (colWon == true) {
-    //     won = colWon
-    //     break
-    //   }
-    // }
-    //
-    // // Diagnal down check
-    // let diagWinDown = true
-    // // Diagnal Forward
-    // this.#_playingBoard.forEach((row, index) => {
-    //   diagWinDown = diagWinDown && row[index] == symbol
-    // })
-    // won = diagWinDown
-    //
-    // // Diagnal up check
-    // let diagWinUp = true
-    // for (let x=(this.#_playingBoard.length - 1); x > 0; x--) {
-    //   let i = (this.#_playingBoard.length - 1) - x
-    //   diagWinUp = diagWinUp && this.#_playingBoard[x][i] == symbol
-    // }
-    // won = diagWinUp
+    if (won === true) {
+      return won
+    }
+
+    // vertical check
+    let colWon = true
+    for (let i=0; i < this.#_playingBoard.length; i++) {
+      colWon = true
+      for (let x=0; x < this.#_playingBoard.length; x++) {
+        colWon = colWon && symbol === this.#_playingBoard[x][i]
+      }
+
+      if (colWon === true) {
+        won = colWon
+        break
+      }
+    }
+
+    if (won === true) {
+      return won
+    }
+
+    // Diagnal down check
+    let diagWinDown = true
+
+    this.#_playingBoard.forEach((row, index) => {
+      diagWinDown = diagWinDown && row[index] == symbol
+    })
+    won = diagWinDown
+
+    if (won === true) {
+      return won
+    }
+
+    // Diagnal up check
+    let diagWinUp = true
+    for (let x=this.#_playingBoard.length - 1; x >= 0; x--) {
+      let i = (this.#_playingBoard.length - 1) - x
+      diagWinUp = diagWinUp && this.#_playingBoard[x][i] == symbol
+    }
+
+    return diagWinUp
   }
 
 }
