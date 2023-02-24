@@ -3,6 +3,7 @@ class Board {
   #_playerSymbolMap
   #_playingBoard
   #_lastPlayedId
+  someoneWon = false
 
   constructor(players) {
     this.#_playerSymbolMap = {}
@@ -33,7 +34,7 @@ class Board {
     this.#_lastPlayedId = player.id
 
     if (this.#_hasSomeoneWon(symbol)) {
-      console.log(`Congratulation ${player.name}. You have won!`)
+      this.someoneWon = true
     }
   }
 

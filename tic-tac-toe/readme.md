@@ -19,3 +19,12 @@
       - If someone wins
       - Game is locked
   - Visualize
+- Game Manager
+  - Have a way to receive input
+    - Welcome message
+    - First create players. Give player names
+  - Start game
+    - Pick a random player to start
+    - Ask for move
+      - Display Board
+  - If winner end game and declare winner
