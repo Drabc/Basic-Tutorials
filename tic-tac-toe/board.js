@@ -3,13 +3,14 @@ class Board {
   #_playerSymbolMap
   #_playingBoard
   #_lastPlayedId
-  someoneWon = false
+  #_players = []
+  winner = null
 
   constructor(players) {
     this.#_playerSymbolMap = {}
     this.#_playerSymbolMap[players[0].id] = 'x'
     this.#_playerSymbolMap[players[1].id] = 'o'
-
+    this.#_players = players
 
     this.#_playingBoard = [
       new Array('-', '-', '-'),
@@ -34,8 +35,12 @@ class Board {
     this.#_lastPlayedId = player.id
 
     if (this.#_hasSomeoneWon(symbol)) {
-      this.someoneWon = true
+      this.winner = player
     }
+  }
+
+  whosNext() {
+    return this.#_players.find((player) => player.id !== this.#_lastPlayedId)
   }
 
   display() {

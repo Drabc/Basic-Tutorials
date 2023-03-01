@@ -23,10 +23,29 @@ class GameManager {
     this.#_players = [player1Name, player2Name].map((name) => new Player(name))
     this.#_board = new Board(this.#_players)
 
-    // game
-    while(!this.#_board.someoneWon) {
-      
+    // game loop
+    while(!this.#_board.winner) {
+      const nextPlayer = this.#_board.whosNext()
+      const coordinatesString = await this.#_createPrompt(`${nextPlayer.name}, what's your move?`)
+
+      // Validate that input is numeric and does within range 
+
+      if (!this.#_validateCoordinate(coordinatesString)) {
+        console.log('Coordinates must include a ",". ie 1,2')
+        continue
+      }
+
+      const [column, row] = coordinatesString.split(',').map((n) => n.trim())
+      this.#_board.mark(nextPlayer, column, row)
+      this.#_board.display()
     }
+
+    console.log(`Congratulations ${this.#_board.winner.name}! You've won!`)
+    process.exit()
+  }
+
+  #_validateCoordinate(coordinates) {
+    return coordinates.includes(',')
   }
 
   #_printMessage(message) {
