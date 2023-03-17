@@ -53,6 +53,12 @@ class Board {
     })
   }
 
+  isGameLocked() {
+    return this.#_playingBoard.every((row) => {
+      return row.every((el) => el !== '-')
+    })
+  }
+
   #_hasSomeoneWon(symbol) {
     // Horizontal check
     let won = false

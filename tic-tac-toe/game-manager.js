@@ -24,11 +24,11 @@ class GameManager {
     this.#_board = new Board(this.#_players)
 
     // game loop
-    while(!this.#_board.winner) {
+    while(!this.#_board.winner && !this.#_board.isGameLocked()) {
       const nextPlayer = this.#_board.whosNext()
       const coordinatesString = await this.#_createPrompt(`${nextPlayer.name}, what's your move?`)
 
-      // Validate that input is numeric and does within range 
+      // Validate that input is numeric and does within range
 
       if (!this.#_validateCoordinate(coordinatesString)) {
         console.log('Coordinates must include a ",". ie 1,2')
@@ -36,16 +36,30 @@ class GameManager {
       }
 
       const [column, row] = coordinatesString.split(',').map((n) => n.trim())
+
+      if (!this.#validateCoordinateEntry([column, row])) {
+        console.log('Coordinates must be a number between 0 and 2')
+        continue
+      }
+
       this.#_board.mark(nextPlayer, column, row)
       this.#_board.display()
     }
 
-    console.log(`Congratulations ${this.#_board.winner.name}! You've won!`)
+    if (this.#_board.winner) {
+      console.log(`Congratulations ${this.#_board.winner.name}! You've won!`)
+    } else {
+      console.log('The game is locked. No winners.')
+    }
     process.exit()
   }
 
   #_validateCoordinate(coordinates) {
     return coordinates.includes(',')
+  }
+
+  #validateCoordinateEntry(coordinates) {
+    return coordinates.every((coordinate) => coordinate.match(/\d/) && coordinate <= 2 && coordinate >= 0)
   }
 
   #_printMessage(message) {
@@ -62,15 +76,3 @@ class GameManager {
 }
 
 module.exports = GameManager
-
-
-//
-// async function run() {
-//     let v1 = await getInput(0);
-//     let v2 = await getInput(1);
-//     console.log(v1, v2);
-// }
-//
-// run().catch((err) => {
-//     console.log(err);
-// });
