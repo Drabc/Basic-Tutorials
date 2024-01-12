@@ -28,3 +28,7 @@
     - Ask for move
       - Display Board
   - If winner end game and declare winner
+
+# Goals
+- Make website migration easier
+- Make dynamic rules easier
