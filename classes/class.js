@@ -80,3 +80,7 @@ class Moneda {
     console.log(`Resultado cara: ${probabilidadCara}%, cruz: ${probabilidadCruz}%`)
   }
 }
+
+const persona = new Persona('Bill', 'Acosta', 30)
+persona.addNewYear()
+persona.changeName('William')
