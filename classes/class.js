@@ -4,7 +4,7 @@
 // un mismo molde puede crear muchas cadenas, pero todas las cadenas reflejan
 // la forma del molde
 // En otro ejemplo, el concepto de personas seria la clase, y un individuo en specifico
-// (Bill Acosta), seria la instancia de esa clase.
+// seria la instancia de esa clase.
 // Para crear una clase usamos la keyword 'new' segido por el nombre de la case y parentesis ()
 // new Person()
 // Las clases tinen una keyword que hace referencia a la instancia: this

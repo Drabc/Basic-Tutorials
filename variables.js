@@ -22,7 +22,7 @@ console.log(letters[1])
 
 // Object
 const persona = {
-  'name': 'Peniel',
-  'apellido': 'martinez'
+  'name': 'Test',
+  'apellido': 'User'
 }
 console.log(`Mi nombre es ${persona.name} ${persona.apellido}`)
